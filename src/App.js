@@ -6,7 +6,7 @@ import Shop from './components/Shop';
 function App() {
 	return (
 		<div className="app">
-			<Router>
+			<Router basename={`/${process.env.PUBLIC_URL}`}>
 				<Navbar />
 				<Routes>
 					<Route path="/" element={<Home />} />
