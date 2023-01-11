@@ -19,8 +19,17 @@ describe('App component', () => {
 			/^You are Home$/i
 		);
 		await userEvent.click(screen.getByRole('link', { name: 'Shop' }));
+		expect(
+			screen.getByRole('heading', { name: 'Products' }).textContent
+		).toMatch(/^Products$/i);
+	});
+
+	it('render home route after being in shop route', async () => {
+		render(<App />);
+		await userEvent.click(screen.getByRole('link', { name: 'Shop' }));
+		await userEvent.click(screen.getByRole('link', { name: 'Home' }));
 		expect(screen.getByRole('heading').textContent).toMatch(
-			/^You're in the Shop$/i
+			/^You are Home$/i
 		);
 	});
 });

@@ -13,14 +13,7 @@ function App() {
 		},
 	]);
 
-	// setShopItems(
-	// 	shopItems.concat([
-	// 		{
-	// 			name: 'test item',
-	// 			price: 100,
-	// 		},
-	// 	])
-	// );
+	useEffect(() => {});
 
 	return (
 		<div className="app">
