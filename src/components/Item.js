@@ -12,9 +12,19 @@ function Item(props) {
 				<h2>{props.item.name}</h2>
 				<h3>MSRP</h3>
 				<h1>${props.item.price}</h1>
-				{/* <form>
-					<input type="text"/>
-				</form> */}
+				<form id={`item${props.index}`} data-itemidx={`${props.index}`}>
+					<input
+						type="number"
+						name="qty"
+						className="qty-input"
+						min="1"
+						defaultValue="1"
+						required
+					/>
+					<button type="submit" className="qty-submit-btn">
+						Add to Cart
+					</button>
+				</form>
 			</div>
 		</div>
 	);

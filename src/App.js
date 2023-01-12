@@ -34,12 +34,51 @@ function App() {
 		},
 	];
 
-	useEffect(() => {});
+	useEffect(() => {
+		for (let i = 0; i < shopItems.length; i += 1) {
+			const currItemElement = document.querySelector(`form#item${i}`);
+			currItemElement.removeEventListener('submit', handleAddToCart);
+			currItemElement.addEventListener('submit', handleAddToCart);
+		}
+
+		return () => {
+			for (let i = 0; i < shopItems.length; i += 1) {
+				const currCardElement = document.querySelector(`form#item${i}`);
+				currCardElement.removeEventListener('submit', handleAddToCart);
+			}
+		};
+	});
+
+	const handleAddToCart = (e) => {
+		e.preventDefault();
+		const formData = new FormData(e.target);
+		const targetItemIdx = Number(e.target.dataset.itemidx);
+		setCart(
+			cart.concat([
+				{
+					name: shopItems[targetItemIdx].name,
+					price: shopItems[targetItemIdx].price,
+					imgPath: shopItems[targetItemIdx].imgPath,
+					quantity: Number(formData.get('qty')),
+				},
+			])
+		);
+	};
+
+	const calculateTotalQty = (cart) => {
+		let totalQty = 0;
+
+		for (let i = 0; i < cart.length; i += 1) {
+			totalQty += cart[i].quantity;
+		}
+
+		return totalQty;
+	};
 
 	return (
 		<div className="app">
 			<Router basename={`/${process.env.PUBLIC_URL}`}>
-				<Navbar cartQty={0}/>
+				<Navbar cartQty={calculateTotalQty(cart)} />
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route

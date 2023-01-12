@@ -23,3 +23,36 @@ div.item-container img.item-img {
 div.item-container div.item-details {
 	padding: 10px;
 }
+
+div.item-container form {
+	display: flex;
+	gap: 10px;
+}
+
+div.item-container form input.qty-input {
+	width: 43px;
+	height: 28px;
+	border-radius: 8px;
+	border: 3px solid black;
+	text-align: right;
+	background-color: #f7f7f7;
+}
+
+div.item-container form button.qty-submit-btn {
+	border-radius: 8px;
+	background-color: #519aba;
+	color: white;
+	border: 0;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+
+div.item-container form button.qty-submit-btn:hover {
+	cursor: pointer;
+	background-color: hsl(198, 43%, 60%);
+}
+
+div.item-container form button.qty-submit-btn:active {
+	background-color: #519aba;
+}

@@ -10,7 +10,7 @@ function Navbar(props) {
 				<NavLink to="">Home</NavLink>
 			</li>
 			<li>
-				<NavLink to="shop">Shop</NavLink>
+				<NavLink to="shop" id="shopLink">Shop</NavLink>
 			</li>
 			<li className="cart-icon">
 				<div className="circle-base cart-qty-container" data-testid="cart-qty">
