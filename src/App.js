@@ -37,14 +37,21 @@ function App() {
 	useEffect(() => {
 		for (let i = 0; i < shopItems.length; i += 1) {
 			const currItemElement = document.querySelector(`form#item${i}`);
-			currItemElement.removeEventListener('submit', handleAddToCart);
-			currItemElement.addEventListener('submit', handleAddToCart);
+			if (currItemElement) {
+				currItemElement.removeEventListener('submit', handleAddToCart);
+				currItemElement.addEventListener('submit', handleAddToCart);
+			}
 		}
 
 		return () => {
 			for (let i = 0; i < shopItems.length; i += 1) {
-				const currCardElement = document.querySelector(`form#item${i}`);
-				currCardElement.removeEventListener('submit', handleAddToCart);
+				const currItemElement = document.querySelector(`form#item${i}`);
+				if (currItemElement) {
+					currItemElement.removeEventListener(
+						'submit',
+						handleAddToCart
+					);
+				}
 			}
 		};
 	});
