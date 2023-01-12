@@ -12,6 +12,9 @@ function Item(props) {
 				<h2>{props.item.name}</h2>
 				<h3>MSRP</h3>
 				<h1>${props.item.price}</h1>
+				{/* <form>
+					<input type="text"/>
+				</form> */}
 			</div>
 		</div>
 	);

@@ -4,7 +4,11 @@ ul.navbar {
 	justify-content: center;
 	gap: 20px;
 	font-size: 24px;
-	padding: 0;
+	padding: 10px 0px;
+	margin: 0;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #e3e3e3;
+	position: relative;
 }
 
 ul.navbar li a {
@@ -19,5 +23,31 @@ ul.navbar li a:hover {
 ul.navbar li a.active {
 	color: #519aba;
 	border-bottom: 3px solid #519aba;
-	padding-bottom: 3px;
+	padding-bottom: 10px;
+}
+
+ul.navbar li.cart-icon {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: flex;
+}
+
+.circle-base {
+	border-radius: 50%;
+}
+
+.cart-qty-container {
+	width: 27px;
+	height: 27px;
+	background: black;
+	color: #f7f7f7;
+	position: absolute;
+	font-size: 20px;
+	font-weight: bold;
+	left: -30px;
+	top: 1px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

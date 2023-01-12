@@ -12,4 +12,12 @@ describe('Navbar component', () => {
 			/^Shop$/i
 		);
 	});
+
+	it('render the correct quantity passed into the Navbar component', () => {
+		const cartQty = 7357;
+		render(<Navbar cartQty={cartQty} />, { wrapper: Router });
+		expect(screen.getByTestId('cart-qty').textContent).toEqual(
+			`${cartQty}`
+		);
+	});
 });

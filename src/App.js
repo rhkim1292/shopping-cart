@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Home from './components/Home';
 import Shop from './components/Shop';
+import Cart from './components/Cart';
 import indianScoutRogue from './images/indian-scout-rogue.png';
 import ninjaH2 from './images/ninja-h2.png';
 import yzfR1m from './images/yzf-r1m.png';
@@ -38,13 +39,14 @@ function App() {
 	return (
 		<div className="app">
 			<Router basename={`/${process.env.PUBLIC_URL}`}>
-				<Navbar />
+				<Navbar cartQty={0}/>
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route
 						path="shop"
 						element={<Shop shopItems={shopItems} />}
 					/>
+					<Route path="cart" element={<Cart />} />
 				</Routes>
 			</Router>
 		</div>
