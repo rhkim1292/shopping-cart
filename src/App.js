@@ -38,16 +38,25 @@ function App() {
 		e.preventDefault();
 		const formData = new FormData(e.target);
 		const targetItemIdx = Number(e.target.dataset.itemidx);
-		setCart(
-			cart.concat([
-				{
-					name: shopItems[targetItemIdx].name,
-					price: shopItems[targetItemIdx].price,
-					imgPath: shopItems[targetItemIdx].imgPath,
-					quantity: Number(formData.get('qty')),
-				},
-			])
+		const foundItem = cart.find(
+			(currItem) => currItem.name === shopItems[targetItemIdx].name
 		);
+
+		if (foundItem) {
+			foundItem.quantity += Number(formData.get('qty'));
+			setCart([...cart]);
+		} else {
+			setCart(
+				cart.concat([
+					{
+						name: shopItems[targetItemIdx].name,
+						price: shopItems[targetItemIdx].price,
+						imgPath: shopItems[targetItemIdx].imgPath,
+						quantity: Number(formData.get('qty')),
+					},
+				])
+			);
+		}
 	};
 
 	const calculateTotalQty = (cart) => {
@@ -75,7 +84,7 @@ function App() {
 							/>
 						}
 					/>
-					<Route path="cart" element={<Cart />} />
+					<Route path="cart" element={<Cart cartItems={cart} />} />
 				</Routes>
 			</Router>
 		</div>
