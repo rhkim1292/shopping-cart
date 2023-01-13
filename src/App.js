@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
@@ -33,28 +33,6 @@ function App() {
 			imgPath: diavelV4,
 		},
 	];
-
-	useEffect(() => {
-		for (let i = 0; i < shopItems.length; i += 1) {
-			const currItemElement = document.querySelector(`form#item${i}`);
-			if (currItemElement) {
-				currItemElement.removeEventListener('submit', handleAddToCart);
-				currItemElement.addEventListener('submit', handleAddToCart);
-			}
-		}
-
-		return () => {
-			for (let i = 0; i < shopItems.length; i += 1) {
-				const currItemElement = document.querySelector(`form#item${i}`);
-				if (currItemElement) {
-					currItemElement.removeEventListener(
-						'submit',
-						handleAddToCart
-					);
-				}
-			}
-		};
-	});
 
 	const handleAddToCart = (e) => {
 		e.preventDefault();
@@ -90,7 +68,12 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route
 						path="shop"
-						element={<Shop shopItems={shopItems} />}
+						element={
+							<Shop
+								shopItems={shopItems}
+								handleAddToCart={handleAddToCart}
+							/>
+						}
 					/>
 					<Route path="cart" element={<Cart />} />
 				</Routes>

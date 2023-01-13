@@ -40,4 +40,14 @@ describe('App component', () => {
 			/^This is your Cart$/i
 		);
 	});
+
+	it('update the cart quantity correctly when user clicks any of the add to cart buttons', async () => {
+		render(<App />);
+		await userEvent.click(screen.getByRole('link', { name: 'Shop' }));
+		expect(screen.getByTestId('cart-qty').textContent).toMatch(/^0$/i);
+		await userEvent.type(screen.getByTestId('input0'), '{backspace}');
+		await userEvent.type(screen.getByTestId('input0'), '2');
+		await userEvent.click(screen.getByTestId('add-to-cart-btn-0'));
+		expect(screen.getByTestId('cart-qty').textContent).toMatch(/^2$/i);
+	});
 });

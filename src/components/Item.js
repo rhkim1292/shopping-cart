@@ -19,9 +19,14 @@ function Item(props) {
 						className="qty-input"
 						min="1"
 						defaultValue="1"
+						data-testid={`input${props.index}`}
 						required
 					/>
-					<button type="submit" className="qty-submit-btn">
+					<button
+						type="submit"
+						className="qty-submit-btn"
+						data-testid={`add-to-cart-btn-${props.index}`}
+					>
 						Add to Cart
 					</button>
 				</form>
