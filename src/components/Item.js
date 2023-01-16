@@ -1,4 +1,6 @@
 import '../styles/Item.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 function Item(props) {
 	return (
@@ -40,6 +42,14 @@ function Item(props) {
 					</div>
 				)}
 			</div>
+			{!props.isCartView ? null : (
+				<FontAwesomeIcon
+					icon={faTrashCan}
+					id={`deleteIcon${props.index}`}
+					className="delete-item-icon"
+					data-idx={props.index}
+				/>
+			)}
 		</div>
 	);
 }

@@ -59,6 +59,14 @@ function App() {
 		}
 	};
 
+	const handleRemoveFromCart = (e) => {
+		const newCart = cart.filter((value, index) => {
+			if (index !== Number(e.target.dataset.idx)) return value;
+			return null;
+		});
+		setCart(newCart);
+	};
+
 	const calculateTotalQty = (cart) => {
 		let totalQty = 0;
 
@@ -84,7 +92,15 @@ function App() {
 							/>
 						}
 					/>
-					<Route path="cart" element={<Cart cartItems={cart} />} />
+					<Route
+						path="cart"
+						element={
+							<Cart
+								cartItems={cart}
+								handleRemoveFromCart={handleRemoveFromCart}
+							/>
+						}
+					/>
 				</Routes>
 			</Router>
 		</div>

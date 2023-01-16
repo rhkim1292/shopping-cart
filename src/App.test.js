@@ -37,7 +37,7 @@ describe('App component', () => {
 		render(<App />);
 		await userEvent.click(screen.getByTestId('cart-link'));
 		expect(screen.getByRole('heading').textContent).toMatch(
-			/^This is your Cart$/i
+			/^Cart$/i
 		);
 	});
 

@@ -3,6 +3,7 @@ div.item-container {
 	border-radius: 5px;
 	width: 800px;
 	display: flex;
+	position: relative;
 }
 
 div.item-container h1,
@@ -55,4 +56,16 @@ div.item-container form button.qty-submit-btn:hover {
 
 div.item-container form button.qty-submit-btn:active {
 	background-color: #519aba;
+}
+
+div.item-container svg.delete-item-icon {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 20px;
+	height: 20px;
+}
+
+div.item-container svg.delete-item-icon:hover {
+	cursor: pointer;
 }
