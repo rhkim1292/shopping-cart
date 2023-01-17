@@ -9,14 +9,14 @@ describe('App component', () => {
 		expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument();
 		expect(screen.getByRole('link', { name: 'Shop' })).toBeInTheDocument();
 		expect(screen.getByRole('heading').textContent).toMatch(
-			/^You are Home$/i
+			/^Randy's Insane Bike Emporium$/i
 		);
 	});
 
 	it('render home route by default, then render shop route when user clicks Shop link', async () => {
 		render(<App />);
 		expect(screen.getByRole('heading').textContent).toMatch(
-			/^You are Home$/i
+			/^Randy's Insane Bike Emporium$/i
 		);
 		await userEvent.click(screen.getByRole('link', { name: 'Shop' }));
 		expect(
@@ -29,7 +29,7 @@ describe('App component', () => {
 		await userEvent.click(screen.getByRole('link', { name: 'Shop' }));
 		await userEvent.click(screen.getByRole('link', { name: 'Home' }));
 		expect(screen.getByRole('heading').textContent).toMatch(
-			/^You are Home$/i
+			/^Randy's Insane Bike Emporium$/i
 		);
 	});
 
