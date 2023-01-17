@@ -60,11 +60,12 @@ function App() {
 	};
 
 	const handleRemoveFromCart = (e) => {
-		const newCart = cart.filter((value, index) => {
-			if (index !== Number(e.target.dataset.idx)) return value;
-			return null;
-		});
-		setCart(newCart);
+		setCart(
+			cart.filter((value, index) => {
+				if (index !== Number(e.target.dataset.idx)) return value;
+				return null;
+			})
+		);
 	};
 
 	const calculateTotalQty = (cart) => {

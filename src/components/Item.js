@@ -48,6 +48,8 @@ function Item(props) {
 					id={`deleteIcon${props.index}`}
 					className="delete-item-icon"
 					data-idx={props.index}
+					data-testid={`delete-item-icon${props.index}`}
+					onClick={props.handleRemoveFromCart}
 				/>
 			)}
 		</div>

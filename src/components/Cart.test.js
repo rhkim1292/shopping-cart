@@ -5,7 +5,9 @@ import indianScoutRogue from '../images/indian-scout-rogue.png';
 describe('Cart component', () => {
 	it('render the header with the correct text', () => {
 		render(<Cart cartItems={[]} />);
-		expect(screen.getByRole('heading').textContent).toMatch(/^Cart$/i);
+		expect(
+			screen.getAllByRole('heading', { name: 'Cart' })[0].textContent
+		).toMatch(/^Cart$/i);
 	});
 
 	it('render the items in the cart', () => {

@@ -69,3 +69,7 @@ div.item-container svg.delete-item-icon {
 div.item-container svg.delete-item-icon:hover {
 	cursor: pointer;
 }
+
+div.item-container svg path {
+	pointer-events: none;
+}
