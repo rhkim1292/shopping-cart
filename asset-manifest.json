@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.a67f4974.css",
-    "main.js": "/shopping-cart/static/js/main.7bc51b1f.js",
+    "main.css": "/shopping-cart/static/css/main.90b64daf.css",
+    "main.js": "/shopping-cart/static/js/main.3286c74f.js",
     "static/media/diavel-v4.png": "/shopping-cart/static/media/diavel-v4.da650e92834cef0cfb09.png",
     "static/media/indian-scout-rogue.png": "/shopping-cart/static/media/indian-scout-rogue.3da9a692cdc9297b6fc6.png",
     "static/media/yzf-r1m.png": "/shopping-cart/static/media/yzf-r1m.1ae6e1ef7219ec5ca22f.png",
     "static/media/ninja-h2.png": "/shopping-cart/static/media/ninja-h2.dbfacd2e5d4c006dc2d7.png",
     "index.html": "/shopping-cart/index.html",
-    "main.a67f4974.css.map": "/shopping-cart/static/css/main.a67f4974.css.map",
-    "main.7bc51b1f.js.map": "/shopping-cart/static/js/main.7bc51b1f.js.map"
+    "main.90b64daf.css.map": "/shopping-cart/static/css/main.90b64daf.css.map",
+    "main.3286c74f.js.map": "/shopping-cart/static/js/main.3286c74f.js.map"
   },
   "entrypoints": [
-    "static/css/main.a67f4974.css",
-    "static/js/main.7bc51b1f.js"
+    "static/css/main.90b64daf.css",
+    "static/js/main.3286c74f.js"
   ]
 }
